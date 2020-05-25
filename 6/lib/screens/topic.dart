@@ -26,9 +26,6 @@ class _TopicsState extends State<Topics> {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            // in changelog 1 we will pass the langname name to ther other widget class
-            // this name will be used to open a particular JSON file
-            // for a particular language
             builder: (context) => Words(langname),
           ));
         },
@@ -47,7 +44,6 @@ class _TopicsState extends State<Topics> {
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(100.0),
                     child: Container(
-                      // changing from 200 to 150 as to look better
                       height: 150.0,
                       width: 150.0,
                       child: ClipOval(
@@ -62,13 +58,15 @@ class _TopicsState extends State<Topics> {
                   ),
                 ),
                 Center(
-                  child: Text(
-                    langname,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.white,
-                      // fontFamily: "Quando",
-                      fontWeight: FontWeight.w700,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 10.0),
+                    child: Text(
+                      langname,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
